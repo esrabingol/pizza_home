@@ -1,18 +1,28 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace TeamWork.Connection
 {
-    public static class TeamSqlConnection
+    public class TeamSqlConnection
     {
-        public static SqlConnection Connect()
+        SqlConnection baglan;
+        private string dynamicConnectionString;
+        string connectionString = string.Empty;
+        public TeamSqlConnection(string dbName)
         {
-            //DataSource yerine kendi veri tabanı adınızı 
-            //Initial Catalog yerine baglanmak istediğiniz veri tabanı adını gireceksiniz
+            dynamicConnectionString = dbName;
+        }
 
-            string connectionString = @"Data Source=DESKTOP-KB74JGP\SQLEXPRESS;Initial Catalog=Deneme;Integrated Security=True";
+        public SqlConnection Connect()
+        {
+            if (baglan?.State != ConnectionState.Open)
+            {
+                connectionString = $"Data Source=DESKTOP-KB74JGP\\SQLEXPRESS;Initial Catalog={dynamicConnectionString};Integrated Security=True";
 
-            SqlConnection baglan = new SqlConnection(connectionString);
-            baglan.Open();
+                baglan = new SqlConnection(connectionString);
+                baglan.Open();
+            }
+
             return baglan;
         }
     }
