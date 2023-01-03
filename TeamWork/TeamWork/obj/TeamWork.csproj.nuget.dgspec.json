@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Veysel\\Desktop\\Works\\esra_team_work\\TeamWork\\TeamWork\\TeamWork.csproj": {}
+    "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Veysel\\Desktop\\Works\\esra_team_work\\TeamWork\\TeamWork\\TeamWork.csproj": {
+    "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Veysel\\Desktop\\Works\\esra_team_work\\TeamWork\\TeamWork\\TeamWork.csproj",
+        "projectUniqueName": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
         "projectName": "TeamWork",
-        "projectPath": "C:\\Users\\Veysel\\Desktop\\Works\\esra_team_work\\TeamWork\\TeamWork\\TeamWork.csproj",
-        "packagesPath": "C:\\Users\\Veysel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Veysel\\Desktop\\Works\\esra_team_work\\TeamWork\\TeamWork\\obj\\",
+        "projectPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
+        "packagesPath": "C:\\Users\\sbing\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Veysel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sbing\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +25,7 @@
           "net5.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,12 +64,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.17, 5.0.17]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

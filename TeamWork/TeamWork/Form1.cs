@@ -6,6 +6,7 @@ using TeamWork.Connection;
 
 namespace TeamWork
 {
+    
     public partial class PizzaHome : Form
     {
         TeamSqlConnection connect;
@@ -31,9 +32,11 @@ namespace TeamWork
                         return;
                     }
 
-                    using (SqlCommand command = new SqlCommand($"BACKUP DATABASE WebSiteDB TO DISK = '{directoryPath}\\{backUpName}.bak'", connect.Connect()))
+                    using (SqlCommand command = new SqlCommand($"BACKUP DATABASE WorkTeam TO DISK = '{directoryPath}\\{backUpName}.bak'", connect.Connect()))
                     {
                         command.ExecuteNonQuery();
+                        MessageBox.Show("Yedekleme işlemi başarılı.", "Uyarı", MessageBoxButtons.OK);
+                        return;
                     }
                 }
             }
@@ -41,7 +44,7 @@ namespace TeamWork
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-KB74JGP\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=LAPTOP-IPQTP7GR;Initial Catalog=master;Integrated Security=True"))
             {
                 connection.Open();
 
@@ -58,9 +61,11 @@ namespace TeamWork
                         using (SqlCommand command = connection.CreateCommand())
                         {
                             //runtime esnasında baglantı koparılmadan yedek dosyanın veri tabanına aktarılması saglanır
-                            command.CommandText = "USE [master] Alter Database WebSiteDB SET SINGLE_USER With ROLLBACK IMMEDIATE RESTORE DATABASE HappyWebSiteDB FROM DISK = @backupFile WITH REPLACE";
+                            command.CommandText = "USE [master] Alter Database WorkTeam SET SINGLE_USER With ROLLBACK IMMEDIATE RESTORE DATABASE WorkTeam FROM DISK = @backupFile WITH REPLACE";
                             command.Parameters.AddWithValue("@backupFile", filePath);
                             command.ExecuteNonQuery();
+
+                            MessageBox.Show("Yedekten dönme işlemi başarılı.", "Uyarı", MessageBoxButtons.OK);
                         }
                     }
                 }
@@ -69,10 +74,10 @@ namespace TeamWork
 
         private void button3_Click(object sender, EventArgs e)
         {
-            connect = new TeamSqlConnection("WebSiteDB");
+            connect = new TeamSqlConnection("WorkTeam");
             DataTable dt = new DataTable();
             //veritanından hangi tablodan veri çekmek istiyorsanız o tabloyu yazacaksınız.
-            SqlDataAdapter da = new SqlDataAdapter("Select * from Projects", connect.Connect());
+            SqlDataAdapter da = new SqlDataAdapter("Select * from personel", connect.Connect());
             da.Fill(dataTable: dt);
             dataGridView1.DataSource = dt;
         }
