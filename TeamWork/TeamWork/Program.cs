@@ -17,7 +17,7 @@ namespace TeamWork
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PizzaHome());
+            Application.Run(new KayitOl());
         }
     }
 }
