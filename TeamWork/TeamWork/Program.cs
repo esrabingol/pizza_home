@@ -17,7 +17,7 @@ namespace TeamWork
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KayitOl());
+            Application.Run(new GirisYap());
         }
     }
 }

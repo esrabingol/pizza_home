@@ -143,3 +143,4 @@ C:\Users\Bunyamin\Source\Repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windo
 C:\Users\Bunyamin\Source\Repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.genruntimeconfig.cache
 C:\Users\Bunyamin\Source\Repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\ref\TeamWork.dll
 C:\Users\Bunyamin\Source\Repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.KayitOl.resources
+C:\Users\Bunyamin\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.GirisYap.resources
