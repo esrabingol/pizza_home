@@ -2773,19 +2773,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bunyamin\\.nuget\\packages\\": {}
+    "C:\\Users\\sbing\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bunyamin\\Source\\Repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
+      "projectUniqueName": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
       "projectName": "TeamWork",
-      "projectPath": "C:\\Users\\Bunyamin\\Source\\Repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
-      "packagesPath": "C:\\Users\\Bunyamin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bunyamin\\Source\\Repos\\teamwork\\TeamWork\\TeamWork\\obj\\",
+      "projectPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
+      "packagesPath": "C:\\Users\\sbing\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Bunyamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sbing\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
