@@ -17,7 +17,7 @@ namespace TeamWork.Connection
         {
             if (baglan?.State != ConnectionState.Open)
             {
-                connectionString = $"Data Source=LAPTOP-IPQTP7GR;Initial Catalog={dynamicConnectionString};Integrated Security=True";
+                connectionString = @$"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog={dynamicConnectionString};Integrated Security=True";
 
                 baglan = new SqlConnection(connectionString);
                 baglan.Open();
