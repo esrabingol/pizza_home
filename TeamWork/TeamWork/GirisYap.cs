@@ -39,7 +39,7 @@ namespace TeamWork
                 return;
             }
 
-            connect = new TeamSqlConnection("TeamSql");
+            connect = new TeamSqlConnection("WorkTeam");
             DataTable kullaniciDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
                                                        //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
             SqlDataAdapter da = new SqlDataAdapter($"Select * from personel Where kullanici_adi = '{KullaniciAdiTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
