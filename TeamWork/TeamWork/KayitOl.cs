@@ -52,7 +52,10 @@ namespace TeamWork
                         string command = ($"INSERT INTO personel (personel_ad, personel_soyad, kullanici_adi, kullanici_sifre) VALUES ('{isimTB.Text}', '{soyisimTB.Text}', '{KullaniciAdiTB.Text}', {SifreTB.Text})");
                         daInsert.InsertCommand = new SqlCommand(command,connect.Connect());
                         daInsert.InsertCommand.ExecuteNonQuery();//yazılan sorgu çalıştırıldı
-                        MessageBox.Show("Kayıt Başarılı");
+                        MessageBox.Show("Kayıt Başarılı, Giriiş Yapabilirsiniz.");
+                        GirisYap frm = new GirisYap();
+                        frm.Show();
+                        this.Hide();
 
                     }
                     catch (Exception ex)

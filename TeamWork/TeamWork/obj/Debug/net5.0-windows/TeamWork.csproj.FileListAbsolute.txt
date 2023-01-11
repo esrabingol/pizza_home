@@ -146,3 +146,6 @@ C:\Users\Bunyamin\Source\Repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windo
 C:\Users\Bunyamin\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.GirisYap.resources
 C:\Users\sbing\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.GirisYap.resources
 C:\Users\sbing\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.KayitOl.resources
+C:\Users\sbing\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.MusteriEkrani.resources
+C:\Users\sbing\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.AdminEkrani.resources
+C:\Users\sbing\source\repos\teamwork\TeamWork\TeamWork\obj\Debug\net5.0-windows\TeamWork.Properties.Resources.resources

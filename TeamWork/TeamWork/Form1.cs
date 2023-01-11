@@ -6,7 +6,7 @@ using TeamWork.Connection;
 
 namespace TeamWork
 {
-    
+   
     public partial class PizzaHome : Form
     {
         TeamSqlConnection connect;
@@ -80,6 +80,13 @@ namespace TeamWork
             SqlDataAdapter da = new SqlDataAdapter("Select * from personel", connect.Connect());
             da.Fill(dataTable: dt);
             dataGridView1.DataSource = dt;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MusteriEkrani frm = new MusteriEkrani();
+            frm.Show();
+            this.Hide();
         }
     }
 }

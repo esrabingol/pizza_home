@@ -18,16 +18,19 @@ namespace TeamWork
         public GirisYap()
         {
             InitializeComponent();
+            SifreTB.PasswordChar = '*';
         }
 
         private void KayitOlButton_Click(object sender, EventArgs e)
         {
-            KayitOl formKayit = new KayitOl(); 
-            formKayit.Show();           
+            KayitOl formKayit = new KayitOl();
+            formKayit.Show();
+
         }
 
         private void GirisYapButton_Click(object sender, EventArgs e)
         {
+
             if (String.IsNullOrWhiteSpace(KullaniciAdiTB.Text))
             {
                 MessageBox.Show("Kullanıcı Adı Alanı Boş Olamaz!");
@@ -45,13 +48,14 @@ namespace TeamWork
             SqlDataAdapter da = new SqlDataAdapter($"Select * from personel Where kullanici_adi = '{KullaniciAdiTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
 
             da.Fill(dataTable: kullaniciDataT); //kullaniciDataT doldurmak(fill) için 
+
             if (kullaniciDataT.Rows.Count > 0)//kullaniciDataT getirilen satır sayısı >0 ise kullanıcı adı doğru
             {
                 var sifre = kullaniciDataT.Rows[0]["kullanici_sifre"].ToString();               
 
                 if (sifre == SifreTB.Text)
                 {
-                    
+                   
                 }
                 else
                 {
@@ -63,6 +67,27 @@ namespace TeamWork
                 MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            if(KullaniciAdiTB.Text == "Admin")
+            {
+                if(SifreTB.Text == "AdminUser")
+                {
+
+                    MessageBox.Show("Admin Giriş Başarılı, Hoşgeldiniz");
+                    AdminEkrani frm = new AdminEkrani();
+                    frm.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else {
+                MusteriEkrani frm = new MusteriEkrani();
+                frm.Show();
+                this.Hide();
+            }
 
 
         }
