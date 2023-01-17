@@ -74,12 +74,20 @@ namespace TeamWork
 
         private void button3_Click(object sender, EventArgs e)
         {
-            connect = new TeamSqlConnection("WorkTeam");
-            DataTable dt = new DataTable();
-            //veritanından hangi tablodan veri çekmek istiyorsanız o tabloyu yazacaksınız.
-            SqlDataAdapter da = new SqlDataAdapter("Select * from personel", connect.Connect());
-            da.Fill(dataTable: dt);
-            dataGridView1.DataSource = dt;
+            string tabloAdi = TabloAdiTB.Text;
+            if (!String.IsNullOrWhiteSpace(tabloAdi))
+            {
+                connect = new TeamSqlConnection("WorkTeam");
+                DataTable dt = new DataTable();
+                //veritanından hangi tablodan veri çekmek istiyorsanız o tabloyu yazacaksınız.
+                SqlDataAdapter da = new SqlDataAdapter($"Select * from {tabloAdi}", connect.Connect());
+                da.Fill(dataTable: dt);
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Tablo adı girilmeli.");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
