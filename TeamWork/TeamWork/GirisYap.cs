@@ -25,7 +25,7 @@ namespace TeamWork
         {
             KayitOl formKayit = new KayitOl();
             formKayit.Show();
-
+            this.Hide();
         }
 
         private void GirisYapButton_Click(object sender, EventArgs e)
@@ -53,13 +53,13 @@ namespace TeamWork
             {
                 var sifre = kullaniciDataT.Rows[0]["kullanici_sifre"].ToString();
 
-                if (KullaniciAdiTB.Text == "Admin")
+                if (KullaniciAdiTB.Text == "Admin") //admin girişi
                 {
                     if (SifreTB.Text == sifre)
                     {
 
                         MessageBox.Show("Admin Giriş Başarılı, Hoşgeldiniz");
-                        AdminEkrani frm = new AdminEkrani();
+                        SiparislerForm frm = new SiparislerForm();
                         frm.Show();
                         this.Hide();
 
@@ -69,14 +69,15 @@ namespace TeamWork
                         MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else // sıradan kullanıcı girişi
                 {
                     if (SifreTB.Text == sifre)
                     {
                         MessageBox.Show("Giriş Başarılı, Hoşgeldiniz");
-                        SiparislerForm frm = new SiparislerForm();
+                        MusteriEkrani frm = new MusteriEkrani(); // sıradan kullanıcıyı kullanıcı ekranına yönlendirme
                         frm.Show();
                         this.Hide();
+
                     }
                     else
                     {

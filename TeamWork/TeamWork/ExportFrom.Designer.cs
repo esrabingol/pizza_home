@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportFrom));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBilgiGetir = new System.Windows.Forms.Button();
             this.TabloAdiTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ExportAlBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +87,7 @@
             // 
             // ExportAlBtn
             // 
-            this.ExportAlBtn.Location = new System.Drawing.Point(562, 367);
+            this.ExportAlBtn.Location = new System.Drawing.Point(561, 368);
             this.ExportAlBtn.Name = "ExportAlBtn";
             this.ExportAlBtn.Size = new System.Drawing.Size(75, 23);
             this.ExportAlBtn.TabIndex = 6;
@@ -93,11 +95,23 @@
             this.ExportAlBtn.UseVisualStyleBackColor = true;
             this.ExportAlBtn.Click += new System.EventHandler(this.ExportAlBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 401);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Geri";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ExportFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(790, 505);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ExportAlBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TabloAdiTB);
@@ -120,5 +134,6 @@
         private System.Windows.Forms.TextBox TabloAdiTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ExportAlBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

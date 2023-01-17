@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusteriEkrani));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.TemizleButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -74,7 +74,6 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.RButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -227,13 +226,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(57, 85);
+            this.button2.Location = new System.Drawing.Point(57, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Temizle";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button4
             // 
@@ -257,7 +256,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.TemizleButton);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.button6);
@@ -282,19 +280,9 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "sipariş girişi";
             // 
-            // TemizleButton
-            // 
-            this.TemizleButton.Location = new System.Drawing.Point(683, 170);
-            this.TemizleButton.Name = "TemizleButton";
-            this.TemizleButton.Size = new System.Drawing.Size(75, 23);
-            this.TemizleButton.TabIndex = 5;
-            this.TemizleButton.Text = "Temizle";
-            this.TemizleButton.UseVisualStyleBackColor = true;
-            this.TemizleButton.Click += new System.EventHandler(this.TemizleButton_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(542, 145);
+            this.button3.Location = new System.Drawing.Point(639, 155);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 24);
             this.button3.TabIndex = 4;
@@ -357,7 +345,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(359, 145);
+            this.button6.Location = new System.Drawing.Point(360, 155);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 25);
             this.button6.TabIndex = 0;
@@ -381,7 +369,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(452, 146);
+            this.textBox7.Location = new System.Drawing.Point(453, 156);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(71, 23);
             this.textBox7.TabIndex = 1;
@@ -390,9 +378,9 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "Küçük",
-            "Orta",
-            "Büyük"});
+            "kucuk",
+            "orta",
+            "buyuk"});
             this.comboBox4.Location = new System.Drawing.Point(126, 126);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 23);
@@ -415,9 +403,9 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Küçük",
-            "Orta",
-            "Büyük"});
+            "kucuk",
+            "orta",
+            "buyuk"});
             this.comboBox2.Location = new System.Drawing.Point(126, 49);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 23);
@@ -427,10 +415,9 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Karışık",
-            "Margarita",
-            "Vejeteryan",
-            "Sucuklu"});
+            "karışık",
+            "margarita",
+            "vejeteryan"});
             this.comboBox1.Location = new System.Drawing.Point(126, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
@@ -508,9 +495,10 @@
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            "İmport ",
+            "İmport",
             "Export",
-            "Yedekleme"});
+            "Yedekleme",
+            "Kayıt"});
             this.comboBox5.Location = new System.Drawing.Point(651, 57);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 23);
@@ -536,22 +524,12 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // RButton
-            // 
-            this.RButton.Location = new System.Drawing.Point(739, 124);
-            this.RButton.Name = "RButton";
-            this.RButton.Size = new System.Drawing.Size(33, 23);
-            this.RButton.TabIndex = 6;
-            this.RButton.Text = "R";
-            this.RButton.UseVisualStyleBackColor = true;
-            this.RButton.Click += new System.EventHandler(this.RButton_Click);
-            // 
             // MusteriEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RButton);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(782, 450);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.comboBox5);
@@ -589,7 +567,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
@@ -617,11 +594,10 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button TemizleButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button RButton;
+        private System.Windows.Forms.Button button2;
     }
 }

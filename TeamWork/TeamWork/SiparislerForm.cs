@@ -34,5 +34,12 @@ namespace TeamWork
             da1.Fill(dataTable: dt1);
             istekPizzaDGW.DataSource = dt1;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GirisYap frm = new GirisYap();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

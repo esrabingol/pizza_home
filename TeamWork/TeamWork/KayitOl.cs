@@ -65,5 +65,12 @@ namespace TeamWork
                 }
             }
         }
+
+        private void KayitOl_Load(object sender, EventArgs e)
+        {
+            GirisYap frm = new GirisYap();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

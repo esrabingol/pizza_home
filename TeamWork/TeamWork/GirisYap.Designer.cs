@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisYap));
             this.KullaniciAdiTB = new System.Windows.Forms.TextBox();
             this.SifreTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,14 +39,14 @@
             // 
             // KullaniciAdiTB
             // 
-            this.KullaniciAdiTB.Location = new System.Drawing.Point(229, 92);
+            this.KullaniciAdiTB.Location = new System.Drawing.Point(167, 58);
             this.KullaniciAdiTB.Name = "KullaniciAdiTB";
             this.KullaniciAdiTB.Size = new System.Drawing.Size(205, 23);
             this.KullaniciAdiTB.TabIndex = 0;
             // 
             // SifreTB
             // 
-            this.SifreTB.Location = new System.Drawing.Point(229, 149);
+            this.SifreTB.Location = new System.Drawing.Point(167, 115);
             this.SifreTB.Name = "SifreTB";
             this.SifreTB.Size = new System.Drawing.Size(205, 23);
             this.SifreTB.TabIndex = 1;
@@ -53,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 100);
+            this.label1.Location = new System.Drawing.Point(88, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 2;
@@ -62,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 157);
+            this.label2.Location = new System.Drawing.Point(88, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 15);
             this.label2.TabIndex = 3;
@@ -70,9 +71,9 @@
             // 
             // GirisYapButton
             // 
-            this.GirisYapButton.Location = new System.Drawing.Point(229, 191);
+            this.GirisYapButton.Location = new System.Drawing.Point(196, 157);
             this.GirisYapButton.Name = "GirisYapButton";
-            this.GirisYapButton.Size = new System.Drawing.Size(205, 23);
+            this.GirisYapButton.Size = new System.Drawing.Size(147, 23);
             this.GirisYapButton.TabIndex = 4;
             this.GirisYapButton.Text = "Giriş Yap";
             this.GirisYapButton.UseVisualStyleBackColor = true;
@@ -80,9 +81,9 @@
             // 
             // KayitOlButton
             // 
-            this.KayitOlButton.Location = new System.Drawing.Point(229, 233);
+            this.KayitOlButton.Location = new System.Drawing.Point(196, 199);
             this.KayitOlButton.Name = "KayitOlButton";
-            this.KayitOlButton.Size = new System.Drawing.Size(205, 23);
+            this.KayitOlButton.Size = new System.Drawing.Size(147, 23);
             this.KayitOlButton.TabIndex = 5;
             this.KayitOlButton.Text = "KayıtOl";
             this.KayitOlButton.UseVisualStyleBackColor = true;
@@ -92,7 +93,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 373);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(523, 324);
             this.Controls.Add(this.KayitOlButton);
             this.Controls.Add(this.GirisYapButton);
             this.Controls.Add(this.label2);

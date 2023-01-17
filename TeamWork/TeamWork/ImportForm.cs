@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TeamWork.Connection;
 
+
 namespace TeamWork
 {
     public partial class ImportForm : Form
@@ -84,7 +85,7 @@ namespace TeamWork
                             daInsert.InsertCommand = new SqlCommand(command, connect.Connect());
                             daInsert.InsertCommand.ExecuteNonQuery();//yazılan sorgu çalıştırıldı
 
-
+                            MessageBox.Show("Başarılı!");
                         }
                     }
                 }
@@ -98,6 +99,24 @@ namespace TeamWork
             {
                 MessageBox.Show("Excel Dosyası Seçiniz!");
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+     
+            MusteriEkrani frm = new MusteriEkrani();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void tablolarCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImportForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

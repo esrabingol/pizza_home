@@ -57,5 +57,13 @@ namespace TeamWork
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //müşteri ekranına GERİ dönmek için
+            MusteriEkrani frm = new MusteriEkrani();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

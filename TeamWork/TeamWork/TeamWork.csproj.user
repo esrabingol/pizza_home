@@ -4,9 +4,6 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AdminEkrani.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="GirisYap.cs">
       <SubType>Form</SubType>
     </Compile>

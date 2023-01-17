@@ -8,18 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using TeamWork.Connection;
+
 namespace TeamWork
 {
     public partial class MusteriEkrani : Form
     {
+        TeamSqlConnection connect;
         public MusteriEkrani()
         {
             InitializeComponent();
         }
         public string pizzacesidi { get; set; }
         public string icecekcesidi { get; set; }
-
-        SqlConnection baglanti = new SqlConnection("Data Source = LAPTOP - IPQTP7GR; Initial Catalog = { dynamicConnectionString }; Integrated Security = True");
+        
+        SqlConnection baglanti = new SqlConnection("Data Source = LAPTOP-IPQTP7GR; Initial Catalog = { dynamicConnectionString }; Integrated Security = True");
         void temizle()
         {
             textBox1.Text = "";
@@ -27,24 +30,23 @@ namespace TeamWork
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
-        }
+            textBox6.Text = "";
 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //müşteri ekle
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into musteri(isim,soyad,mail,telefon_nmrs,adres,sehir) values(@p1,@p2,@p3,@p4,@p5,@p6)", baglanti);
-            komut.Parameters.AddWithValue("@p1", textBox1.Text);
-            komut.Parameters.AddWithValue("@p2", textBox2.Text);
-            komut.Parameters.AddWithValue("@p3", textBox3.Text);
-            komut.Parameters.AddWithValue("@p4", textBox4.Text);
-            komut.Parameters.AddWithValue("@p5", textBox5.Text);
-            komut.Parameters.AddWithValue("@p6", textBox6.Text);
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-            MessageBox.Show("Müşteri eklendi");
+            int num;
+            num = Convert.ToInt32(textBox4.Text);
+            string command;
+            SqlDataAdapter daInsert = new SqlDataAdapter();
+            connect = new TeamSqlConnection("WorkTeam"); 
+            command = ($"insert into musteri(isim,soyad,mail,telefon_nmrs,adres,sehir) values ('{textBox1.Text}', '{textBox2.Text}', '{textBox3.Text}',{num},'{textBox5.Text}','{textBox6.Text}')");
+            daInsert.InsertCommand = new SqlCommand(command, connect.Connect());
+            daInsert.InsertCommand.ExecuteNonQuery(); //yazılan sorgu çalıştırıldı
+            MessageBox.Show("Müşteri Kaydedildi.");
         }
+        
 
         public int fiyat = 30; //içecek ve hamur dahil
         public int sayac = 0;
@@ -163,7 +165,6 @@ namespace TeamWork
 
 
 
-
             fiyat = fiyat * sayac;
             textBox7.Text = Convert.ToString(fiyat);
             fiyat = 30;
@@ -189,29 +190,31 @@ namespace TeamWork
 
         private void button3_Click(object sender, EventArgs e)
         {
+            SqlDataAdapter daInsert = new SqlDataAdapter();
+            connect = new TeamSqlConnection("WorkTeam");
             //sipariş oluştur
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into pizza(pizza_ad,pizza_boyut,fiyat,pizza_adedi,ekstra) values(@a1,@a2,@a3,@a4,@a5)", baglanti);
-            komut.Parameters.AddWithValue("@a1", comboBox1.Text);
-            komut.Parameters.AddWithValue("@a2", comboBox2.Text);
-            komut.Parameters.AddWithValue("@a3", textBox7.Text);
-            komut.Parameters.AddWithValue("@a4", numericUpDown1.Text);
-            komut.ExecuteNonQuery();
-            baglanti.Close();
 
-            baglanti.Open();
-            SqlCommand komut2 = new SqlCommand("insert into icecek(İcecek_byt,İcecek_ad,icecek_adedi) values(@b1,@b2,@b3)", baglanti);
-            komut2.Parameters.AddWithValue("@b1", comboBox3.Text);
-            komut2.Parameters.AddWithValue("@b2", comboBox4.Text);
-            komut2.Parameters.AddWithValue("@b3", numericUpDown2.Text);
-            komut2.ExecuteNonQuery();
-            baglanti.Close();
+
+            int num;
+            num = Convert.ToInt32(numericUpDown1.Text);
+            string command;
+            command = ($"insert into pizza(pizza_ad,pizza_boyut,fiyat,adet) values ('{comboBox1.Text}', '{comboBox2.Text}', '{textBox7.Text}',{num})");
+            daInsert.InsertCommand = new SqlCommand(command, connect.Connect());
+            daInsert.InsertCommand.ExecuteNonQuery(); //yazılan sorgu çalıştırıldı
+            
+
+            int num2;
+            num2 = Convert.ToInt32(numericUpDown2.Text);
+            string command2;
+            command2 = ($"insert into icecek(İcecek_byt,İcecek_ad,adet) values ('{comboBox4.Text}', '{comboBox3.Text}',{num2})");
+            daInsert.InsertCommand = new SqlCommand(command2, connect.Connect());
+            daInsert.InsertCommand.ExecuteNonQuery(); //yazılan sorgu çalıştırıldı
             MessageBox.Show("Siparişiniz alındı.");
         }
 
         private void TemizleButton_Click(object sender, EventArgs e)
         {
-
+            temizle();
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -235,12 +238,19 @@ namespace TeamWork
                 frm.Show();
                 this.Hide();
             }
-            if (comboBox5.Text == "İmport ")
+            if (comboBox5.Text == "İmport")
             {
                 ImportForm frm = new ImportForm();
                 frm.Show();
                 this.Hide();
             }
+            if (comboBox5.Text == "Kayıt")
+            {
+                ExportFrom frm = new ExportFrom();
+                frm.Show();
+                this.Hide();
+            }
+
 
         }
 
@@ -249,6 +259,11 @@ namespace TeamWork
             comboBox1.Items.Add(pizzacesidi);
             comboBox3.Items.Add(icecekcesidi);
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }

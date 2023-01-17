@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiparislerForm));
             this.siparisDGW = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.istekPizzaDGW = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.siparisDGW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.istekPizzaDGW)).BeginInit();
             this.SuspendLayout();
@@ -85,17 +87,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Siparisler
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 462);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Geri";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SiparislerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(927, 497);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.istekPizzaDGW);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.siparisDGW);
-            this.Name = "Siparisler";
+            this.Name = "SiparislerForm";
             this.Text = "Siparisler";
             ((System.ComponentModel.ISupportInitialize)(this.siparisDGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.istekPizzaDGW)).EndInit();
@@ -111,5 +125,6 @@
         private System.Windows.Forms.DataGridView istekPizzaDGW;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
