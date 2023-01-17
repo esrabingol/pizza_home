@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {}
+    "C:\\Users\\Bunyamin\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {
+    "C:\\Users\\Bunyamin\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
+        "projectUniqueName": "C:\\Users\\Bunyamin\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
         "projectName": "TeamWork",
-        "projectPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
-        "packagesPath": "C:\\Users\\sbing\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbing\\source\\repos\\teamwork\\TeamWork\\TeamWork\\obj\\",
+        "projectPath": "C:\\Users\\Bunyamin\\source\\repos\\teamwork\\TeamWork\\TeamWork\\TeamWork.csproj",
+        "packagesPath": "C:\\Users\\Bunyamin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bunyamin\\source\\repos\\teamwork\\TeamWork\\TeamWork\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sbing\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Bunyamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +40,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.0.1, )"

@@ -51,15 +51,37 @@ namespace TeamWork
 
             if (kullaniciDataT.Rows.Count > 0)//kullaniciDataT getirilen satır sayısı >0 ise kullanıcı adı doğru
             {
-                var sifre = kullaniciDataT.Rows[0]["kullanici_sifre"].ToString();               
+                var sifre = kullaniciDataT.Rows[0]["kullanici_sifre"].ToString();
 
-                if (sifre == SifreTB.Text)
+                if (KullaniciAdiTB.Text == "Admin")
                 {
-                   
+                    if (SifreTB.Text == sifre)
+                    {
+
+                        MessageBox.Show("Admin Giriş Başarılı, Hoşgeldiniz");
+                        AdminEkrani frm = new AdminEkrani();
+                        frm.Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (SifreTB.Text == sifre)
+                    {
+                        MessageBox.Show("Giriş Başarılı, Hoşgeldiniz");
+                        SiparislerForm frm = new SiparislerForm();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -67,27 +89,7 @@ namespace TeamWork
                 MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if(KullaniciAdiTB.Text == "Admin")
-            {
-                if(SifreTB.Text == "AdminUser")
-                {
-
-                    MessageBox.Show("Admin Giriş Başarılı, Hoşgeldiniz");
-                    AdminEkrani frm = new AdminEkrani();
-                    frm.Show();
-                    this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else {
-                MusteriEkrani frm = new MusteriEkrani();
-                frm.Show();
-                this.Hide();
-            }
+            
 
 
         }

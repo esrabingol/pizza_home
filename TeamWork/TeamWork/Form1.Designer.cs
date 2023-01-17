@@ -36,6 +36,8 @@ namespace TeamWork
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.TabloAdiTB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,11 +106,29 @@ namespace TeamWork
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // TabloAdiTB
+            // 
+            this.TabloAdiTB.Location = new System.Drawing.Point(413, 274);
+            this.TabloAdiTB.Name = "TabloAdiTB";
+            this.TabloAdiTB.Size = new System.Drawing.Size(244, 23);
+            this.TabloAdiTB.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(351, 275);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Tablo Adı";
+            // 
             // PizzaHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TabloAdiTB);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -133,6 +153,8 @@ namespace TeamWork
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox TabloAdiTB;
+        private System.Windows.Forms.Label label2;
     }
 }
 

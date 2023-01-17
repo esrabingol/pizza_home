@@ -223,9 +223,21 @@ namespace TeamWork
         private void button5_Click(object sender, EventArgs e)
         {
             //import export bağlantısı buttonu 
-            if(comboBox5.Text == "Yedekleme")
+            if (comboBox5.Text == "Yedekleme")
             {
                 PizzaHome frm = new PizzaHome();
+                frm.Show();
+                this.Hide();
+            }
+            if (comboBox5.Text == "Export")
+            {
+                ExportFrom frm = new ExportFrom();
+                frm.Show();
+                this.Hide();
+            }
+            if (comboBox5.Text == "İmport ")
+            {
+                ImportForm frm = new ImportForm();
                 frm.Show();
                 this.Hide();
             }
